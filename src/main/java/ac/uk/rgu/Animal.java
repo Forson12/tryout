@@ -1,4 +1,4 @@
-package ac.uk;
+package ac.uk.rgu;
 
 public abstract class Animal {
 
