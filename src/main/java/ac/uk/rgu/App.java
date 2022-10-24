@@ -60,12 +60,15 @@ public class App {
         FlyingThings[1] = new Pegasus("Mane");
         FlyingThings[2] = new Plane();
         //acceptFlyingThing(FlyingThing);
-        FlyingThings[1].fly();
+        //FlyingThings[1].fly();
 
-        // for (int i=0; i <= FlyingThings.length; i++){
-        //     System.out.println(FlyingThings[i]);
 
-        // } 
+         for (int i=0; i < FlyingThings.length; i++){
+            System.out.println(FlyingThings[i].getFlyingDistance());
+
+        } 
+
+
 
 
     }

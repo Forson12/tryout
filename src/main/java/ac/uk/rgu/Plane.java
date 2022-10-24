@@ -8,5 +8,10 @@ public class Plane implements CanFly{
         System.out.println("Plane is Flying");
         
     }
+
+    @Override
+    public int getFlyingDistance(){
+        return 10; 
+    }
     
 }

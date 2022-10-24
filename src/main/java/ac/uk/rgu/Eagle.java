@@ -1,5 +1,5 @@
 package ac.uk.rgu;
-
+// A class using the interfaces CanFly and Predator
 public class Eagle extends Bird implements CanFly, Predetor{
 
     public Eagle(String name) {
