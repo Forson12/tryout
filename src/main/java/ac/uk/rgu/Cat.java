@@ -1,4 +1,4 @@
-package ac.uk;
+package ac.uk.rgu;
 
 public class Cat extends Animal{
 
