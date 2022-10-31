@@ -1,5 +1,8 @@
 package ac.uk.rgu;
 
+import ac.uk.Laptop;
+import ac.uk.Laptop.laptopScreen;
+
 // import javafx.application.Application;
 // import javafx.fxml.FXMLLoader;
 // import javafx.scene.Parent;
@@ -55,21 +58,25 @@ public class App {
 
         //acceptFlyingThing(FlyingThing);
 
-        CanFly[]  FlyingThings = new CanFly[3]; 
-        FlyingThings[0] = new Eagle("Kenny");
-        FlyingThings[1] = new Pegasus("Mane");
-        FlyingThings[2] = new Plane();
+        // CanFly[]  FlyingThings = new CanFly[3]; 
+        // FlyingThings[0] = new Eagle("Kenny");
+        // FlyingThings[1] = new Pegasus("Mane");
+        // FlyingThings[2] = new Plane();
         //acceptFlyingThing(FlyingThing);
         //FlyingThings[1].fly();
 
 
-         for (int i=0; i < FlyingThings.length; i++){
-            System.out.println(FlyingThings[i].getFlyingDistance());
+        //  for (int i=0; i < FlyingThings.length; i++){
+        //     System.out.println(FlyingThings[i].getFlyingDistance());
 
-        } 
+        // } 
 
+        // LAa 5
+        // Laptop laptop = new Laptop(); 
+        // laptopScreen  screen = laptop.new laptopScreen(15, "1024/720"); 
+        // System.out.println(screen);
 
-
+        
 
     }
     
@@ -80,9 +87,9 @@ public class App {
 
     // }
 
-    public static void acceptFlyingThing(CanFly thing){
-        thing.fly(); 
-    }
+    // public static void acceptFlyingThing(CanFly thing){
+    //     thing.fly(); 
+    // }
 
 
 
