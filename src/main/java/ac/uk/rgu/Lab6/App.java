@@ -1,4 +1,6 @@
-package ac.uk.rgu;
+package ac.uk.rgu.Lab6;
+
+//import javax.xml.validation.Validator;
 
 import ac.uk.Laptop;
 import ac.uk.Laptop.laptopScreen;
@@ -34,7 +36,29 @@ public class App {
     // private static Parent loadFXML(String fxml) throws IOException {
     //     FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
     //     return fxmlLoader.load();
+
+
+     //}
+
+    // for LAb 6
+    // for Singleton
+    // private Logger logger; 
+    // public  void setLogger(Logger logger) {
+    //     this.logger = logger;
     // }
+    
+    //for commands 
+    private static command[] commands = new command[10]; 
+
+    private  String[] words = {"Computing", "Aberdeen", "Katherine", "Cassey"};
+
+    public void doSomething(){
+        // if(this.logger != null){
+        //     logger.log("I'm doing something");
+        // }
+        System.out.println("I'm doing something");
+    }
+
 
     public static void main(String[] args) {
         //launch();
@@ -76,10 +100,50 @@ public class App {
         // laptopScreen  screen = laptop.new laptopScreen(15, "1024/720"); 
         // System.out.println(screen);
 
+        // Lab 6 
+        //Testing the singleton Pattern
+        // App app = new App(); 
+        // VerboseLogger logger = VerboseLogger.getInstance(); 
+        // app.setLogger(logger); 
+        // app.doSomething(); 
+
+        //Testing the Command Behavoural Pattern
+        // App instance = new App(); 
+        // command doSomethingCommand = new MainAppCommand(instance); 
+        // commands[0] = doSomethingCommand; 
+
+        // Computer pc = new Computer(); 
+        // commands[1] = pc:: turnOn; 
+
+        /*a lot of things happen  */
+        //Testing the commands
+        //commands[0].execute();
+        //commands[1].execute();
         
+        // Testing the Stategy Pattern
+        App instance = new App(); 
+        ForwardPrintStrategy s = new ForwardPrintStrategy(); 
+        instance.printWords(s);
+        System.out.println(" ");
+        
+        // Printing the Array Backwards
+        PrintStrategy s2 = (Values) ->{
+            for(int i = Values.length-1; i >=0; i--){
+                System.out.println(Values[i]);
+
+            }
+        };
+        instance.printWords(s2);
+
 
     }
     
+    //Stategy Pattern
+    public void printWords(PrintStrategy printStrategy){
+        printStrategy.print(this.words);
+        
+    }
+
     // public static void acceptAnimal(Animal animal){
     //     //System.out.println(animal.makeNoise());
 
