@@ -1,5 +1,17 @@
 package ac.uk.rgu;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+//import javax.sound.sampled.SourceDataLine;
+
 import ac.uk.rgu.Lab7.Cars.Car;
 import ac.uk.rgu.Lab7.Cars.CarServiceVisitor;
 import ac.uk.rgu.Lab7.Cars.CarVisitor;
@@ -10,6 +22,7 @@ import ac.uk.rgu.Lab7.Furniture.Chair;
 import ac.uk.rgu.Lab7.Furniture.FurnitureFactory;
 import ac.uk.rgu.Lab7.Furniture.MordernFurnitureFactory;
 import ac.uk.rgu.Lab7.Furniture.Table;
+import ac.uk.rgu.Lab7.Lab7a.Person;
 
 //import javax.xml.validation.Validator;
 
@@ -157,16 +170,102 @@ public class App {
 
 
         //visitor Design Pattern 
-        Car[] cars = {new Ford(), new Ferrari()}; 
-        CarVisitor visitor = new CarServiceVisitor(); 
+        // Car[] cars = {new Ford(), new Ferrari()}; 
+        // CarVisitor visitor = new CarServiceVisitor(); 
 
-        for(Car car: cars){
-            car.accept(visitor);
+        // for(Car car: cars){
+        //     car.accept(visitor);
+        // }
+
+        // Lab 7a 
+        Person person = new Person(30, "Isaac", "John"); 
+        Person person1 = new Person(17, "Packer", "Peter"); 
+        Person person2 = new Person(22, "Jamie", "Kay"); 
+        Person person3 = new Person(17, "Miles", "Mirales"); 
+
+        // List<Person> people = new ArrayList<>(); 
+        // people.add(person);
+        // people.add(person1);
+        // people.add(person2);
+        // people.add(person1);
+
+        // for(Person p : people){
+        //     System.out.println(p.getFirstname() + " " + p.getSurname() + " " + p.getAge());
+        // }
+        
+        // System.out.println();
+
+        // Set<Person> newPeople = new HashSet<>(); 
+        // newPeople.add(person);
+        // newPeople.add(person1);
+        // newPeople.add(person2);
+        // newPeople.add(person1);
+
+        // for(Person p : newPeople){
+        //     System.out.println(p.getFirstname() + " " + p.getSurname() + " " + p.getAge());
+        // }
+
+        Map<String, Person> myMap = new HashMap<>(); 
+        myMap.put("New-man", person);
+        myMap.put("Spider-Man", person1);
+        myMap.put("Black Panther", person2);
+        myMap.put("New Comic Spider-Man", person3);
+        
+
+        for(String key : myMap.keySet()){
+            Person p = myMap.get(key);
+            //System.out.println(key + " " + p.getFirstname() + " " + p.getSurname());
+            //System.out.println(key);
         }
+
+        System.out.println();
+
+        Map<String, List<Person>> myMap1 = new HashMap<>(); 
+
+        List<Person> people = new ArrayList<>(); 
+        people.add(person3);
+        people.add(person1);
+
+        myMap1.put("Spider-Man", people) ;
+        
+        for(String key : myMap1.keySet()){
+            List<Person> people2 = myMap1.get(key);
+            for(Person p : people2){
+                //System.out.println(key + " " + p.getFirstname() + " " + p.getSurname());
+            }
+            //System.out.println(key);
+        }
+
+        List<Person> people3 = new ArrayList<>(); 
+        people3.add(person1); 
+        people3.add(person2); 
+        people3.add(person3);
+        people3.add(person);
+
+        //Collections.sort(people3);
+        //people3.sort(new Person.PersonComparator());
+        //  people3.forEach(System.out::println);
+
+        for(Person p : people3){
+            //System.out.println(p.getSurname() + " " + p.getFirstname() + " " + p.getAge());
+        }
+
+        // What you can do with the for Each functional interfaces 
+        //people3.forEach(System.out::println); 
+        // Using Streams
+        System.out.println();
+        List <Person> people4 = people3.stream().filter((p) -> p.getAge() > 17).collect(Collectors.toList()); 
+        people4.forEach(System.out::println); 
+        
+        
+       
+
+
+
+
 
 
     }
-    
     //Stategy Pattern
     // public void printWords(PrintStrategy printStrategy){
     //     printStrategy.print(this.words);
@@ -183,8 +282,5 @@ public class App {
     // public static void acceptFlyingThing(CanFly thing){
     //     thing.fly(); 
     // }
-
-
-
 
 }
