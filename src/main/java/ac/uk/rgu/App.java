@@ -1,11 +1,18 @@
 package ac.uk.rgu;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -23,6 +30,7 @@ import ac.uk.rgu.Lab7.Furniture.FurnitureFactory;
 import ac.uk.rgu.Lab7.Furniture.MordernFurnitureFactory;
 import ac.uk.rgu.Lab7.Furniture.Table;
 import ac.uk.rgu.Lab7.Lab7a.Person;
+import javafx.scene.input.InputEvent;
 
 //import javax.xml.validation.Validator;
 
@@ -218,7 +226,7 @@ public class App {
             //System.out.println(key);
         }
 
-        System.out.println();
+        //System.out.println();
 
         Map<String, List<Person>> myMap1 = new HashMap<>(); 
 
@@ -255,8 +263,66 @@ public class App {
         // Using Streams
         System.out.println();
         List <Person> people4 = people3.stream().filter((p) -> p.getAge() > 17).collect(Collectors.toList()); 
-        people4.forEach(System.out::println); 
+        //people4.forEach(System.out::println); 
         
+
+        /*Lab 8 */
+        /*Try Catch */
+        // Scanner input  = new Scanner(System.in); 
+
+        // System.out.print("Enter a number: ");
+        // String text = input.nextLine(); 
+        // input.close();
+        
+        // try {
+        //     int num = Integer.parseInt(text);
+        //     int results = num*10; 
+        //     System.out.println(num + " has been entered \n" + "results times 10  = " + results );
+            
+        // } catch (Exception e) {
+        //     TODO: handle exception
+        //     System.out.println(e.getMessage());
+        //     System.out.println("That's not a number! Try Entering an Integer");
+        // }
+        
+        
+        //System.out.println("Thanks for using my program");
+
+        /*Creating Files */
+        // File myFile = new File("myFile.txt");
+        
+        // try {
+        //     if(myFile.createNewFile()){
+        //         System.out.println("File created");
+        //     }else{
+        //         System.out.println("File already exists");
+        //     }
+        // } catch (IOException e) {
+        //     // TODO Auto-generated catch block
+        //     e.printStackTrace();
+        // }
+
+        try(FileWriter fw = new FileWriter("anotherFile.txt"); BufferedWriter bw = new BufferedWriter(fw)){
+            bw.write("This is a message \n");
+            bw.write("this is another message \n");
+            bw.close();
+            fw.close();
+        }catch(IOException ex){
+            System.out.println("An error occurred:" + ex.getMessage());
+        }
+
+        try(FileReader fr = new FileReader("anotherFile.txt"); BufferedReader br = new BufferedReader(fr)){
+
+            String line = br.readLine(); 
+
+            while(line != null){
+                System.out.println(line);
+                line = br.readLine(); 
+            }
+        }catch(IOException ex){
+            System.out.println("An error occurred:" + ex.getMessage());
+        }
+
         
        
 
