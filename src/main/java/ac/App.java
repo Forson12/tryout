@@ -1,36 +1,40 @@
-package ac.uk.rgu;
+package ac;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
-//import javax.sound.sampled.SourceDataLine;
+// import java.io.BufferedReader;
+// import java.io.BufferedWriter;
+// import java.io.File;
+// import java.io.FileReader;
+// import java.io.FileWriter;
+// import java.io.IOException;
+// import java.util.ArrayList;
+// import java.util.Collections;
+// import java.util.HashMap;
+// import java.util.HashSet;
+// import java.util.List;
+// import java.util.Map;
+// import java.util.Scanner;
+// import java.util.Set;
+// import java.util.stream.Collector;
+// import java.util.stream.Collectors;
 
-import ac.uk.rgu.Lab7.Cars.Car;
-import ac.uk.rgu.Lab7.Cars.CarServiceVisitor;
-import ac.uk.rgu.Lab7.Cars.CarVisitor;
-import ac.uk.rgu.Lab7.Cars.Ferrari;
-import ac.uk.rgu.Lab7.Cars.Ford;
-import ac.uk.rgu.Lab7.Furniture.AntiqueFurnitureFactory;
-import ac.uk.rgu.Lab7.Furniture.Chair;
-import ac.uk.rgu.Lab7.Furniture.FurnitureFactory;
-import ac.uk.rgu.Lab7.Furniture.MordernFurnitureFactory;
-import ac.uk.rgu.Lab7.Furniture.Table;
-import ac.uk.rgu.Lab7.Lab7a.Person;
-import javafx.scene.input.InputEvent;
+// //import javax.sound.sampled.SourceDataLine;
+
+// import ac.uk.rgu.Lab7.Cars.Car;
+// import ac.uk.rgu.Lab7.Cars.CarServiceVisitor;
+// import ac.uk.rgu.Lab7.Cars.CarVisitor;
+// import ac.uk.rgu.Lab7.Cars.Ferrari;
+// import ac.uk.rgu.Lab7.Cars.Ford;
+// import ac.uk.rgu.Lab7.Furniture.AntiqueFurnitureFactory;
+// import ac.uk.rgu.Lab7.Furniture.Chair;
+// import ac.uk.rgu.Lab7.Furniture.FurnitureFactory;
+// import ac.uk.rgu.Lab7.Furniture.MordernFurnitureFactory;
+// import ac.uk.rgu.Lab7.Furniture.Table;
+// import ac.uk.rgu.Lab7.Lab7a.Person;
+// import javafx.scene.input.InputEvent;
 
 //import javax.xml.validation.Validator;
 
@@ -90,9 +94,35 @@ public class App {
         // }
        // System.out.println("I'm doing something");
     //}
+    
+    public static int algorithm1 (int n ){
+        int p = n; 
+        int total = 1; 
+        for(int i = 1; i < p; i++ ){
+            total = total*i; 
+        }
+        return total; 
 
+    }
+    // questions 2 
+    
+
+    public static String  al2 (String s ){
+        Map<Character, Integer> results = new HashMap<>(); 
+        //ch.put('a'. s)
+        
+       
+
+
+
+        return s;
+    }
 
     public static void main(String[] args) {
+
+
+        //algorithm1(10); 
+        System.out.println(algorithm1(10));
         //launch();
        // Cat cat = new Cat("Main");
         // String noise = cat.makeNoise();
@@ -186,10 +216,10 @@ public class App {
         // }
 
         // Lab 7a 
-        Person person = new Person(30, "Isaac", "John"); 
-        Person person1 = new Person(17, "Packer", "Peter"); 
-        Person person2 = new Person(22, "Jamie", "Kay"); 
-        Person person3 = new Person(17, "Miles", "Mirales"); 
+        // Person person = new Person(30, "Isaac", "John"); 
+        // Person person1 = new Person(17, "Packer", "Peter"); 
+        // Person person2 = new Person(22, "Jamie", "Kay"); 
+        // Person person3 = new Person(17, "Miles", "Mirales"); 
 
         // List<Person> people = new ArrayList<>(); 
         // people.add(person);
@@ -213,56 +243,56 @@ public class App {
         //     System.out.println(p.getFirstname() + " " + p.getSurname() + " " + p.getAge());
         // }
 
-        Map<String, Person> myMap = new HashMap<>(); 
-        myMap.put("New-man", person);
-        myMap.put("Spider-Man", person1);
-        myMap.put("Black Panther", person2);
-        myMap.put("New Comic Spider-Man", person3);
+        // Map<String, Person> myMap = new HashMap<>(); 
+        // myMap.put("New-man", person);
+        // myMap.put("Spider-Man", person1);
+        // myMap.put("Black Panther", person2);
+        // myMap.put("New Comic Spider-Man", person3);
         
 
-        for(String key : myMap.keySet()){
-            Person p = myMap.get(key);
-            //System.out.println(key + " " + p.getFirstname() + " " + p.getSurname());
-            //System.out.println(key);
-        }
+        // for(String key : myMap.keySet()){
+        //     Person p = myMap.get(key);
+        //     //System.out.println(key + " " + p.getFirstname() + " " + p.getSurname());
+        //     //System.out.println(key);
+        // }
 
         //System.out.println();
 
-        Map<String, List<Person>> myMap1 = new HashMap<>(); 
+        // Map<String, List<Person>> myMap1 = new HashMap<>(); 
 
-        List<Person> people = new ArrayList<>(); 
-        people.add(person3);
-        people.add(person1);
+        // List<Person> people = new ArrayList<>(); 
+        // people.add(person3);
+        // people.add(person1);
 
-        myMap1.put("Spider-Man", people) ;
+        // myMap1.put("Spider-Man", people) ;
         
-        for(String key : myMap1.keySet()){
-            List<Person> people2 = myMap1.get(key);
-            for(Person p : people2){
-                //System.out.println(key + " " + p.getFirstname() + " " + p.getSurname());
-            }
-            //System.out.println(key);
-        }
+        // for(String key : myMap1.keySet()){
+        //     List<Person> people2 = myMap1.get(key);
+        //     for(Person p : people2){
+        //         //System.out.println(key + " " + p.getFirstname() + " " + p.getSurname());
+        //     }
+        //     //System.out.println(key);
+        // }
 
-        List<Person> people3 = new ArrayList<>(); 
-        people3.add(person1); 
-        people3.add(person2); 
-        people3.add(person3);
-        people3.add(person);
+        // List<Person> people3 = new ArrayList<>(); 
+        // people3.add(person1); 
+        // people3.add(person2); 
+        // people3.add(person3);
+        // people3.add(person);
 
         //Collections.sort(people3);
         //people3.sort(new Person.PersonComparator());
         //  people3.forEach(System.out::println);
 
-        for(Person p : people3){
-            //System.out.println(p.getSurname() + " " + p.getFirstname() + " " + p.getAge());
-        }
+        // for(Person p : people3){
+        //     //System.out.println(p.getSurname() + " " + p.getFirstname() + " " + p.getAge());
+        // }
 
         // What you can do with the for Each functional interfaces 
         //people3.forEach(System.out::println); 
         // Using Streams
-        System.out.println();
-        List <Person> people4 = people3.stream().filter((p) -> p.getAge() > 17).collect(Collectors.toList()); 
+        // System.out.println();
+        // List <Person> people4 = people3.stream().filter((p) -> p.getAge() > 17).collect(Collectors.toList()); 
         //people4.forEach(System.out::println); 
         
 
@@ -298,30 +328,30 @@ public class App {
         //         System.out.println("File already exists");
         //     }
         // } catch (IOException e) {
-        //     // TODO Auto-generated catch block
+        //     TODO Auto-generated catch block
         //     e.printStackTrace();
         // }
 
-        try(FileWriter fw = new FileWriter("anotherFile.txt"); BufferedWriter bw = new BufferedWriter(fw)){
-            bw.write("This is a message \n");
-            bw.write("this is another message \n");
-            bw.close();
-            fw.close();
-        }catch(IOException ex){
-            System.out.println("An error occurred:" + ex.getMessage());
-        }
+        // try(FileWriter fw = new FileWriter("anotherFile.txt"); BufferedWriter bw = new BufferedWriter(fw)){
+        //     bw.write("This is a message \n");
+        //     bw.write("this is another message \n");
+        //     bw.close();
+        //     fw.close();
+        // }catch(IOException ex){
+        //     System.out.println("An error occurred:" + ex.getMessage());
+        // }
 
-        try(FileReader fr = new FileReader("anotherFile.txt"); BufferedReader br = new BufferedReader(fr)){
+        // try(FileReader fr = new FileReader("anotherFile.txt"); BufferedReader br = new BufferedReader(fr)){
 
-            String line = br.readLine(); 
+        //     String line = br.readLine(); 
 
-            while(line != null){
-                System.out.println(line);
-                line = br.readLine(); 
-            }
-        }catch(IOException ex){
-            System.out.println("An error occurred:" + ex.getMessage());
-        }
+        //     while(line != null){
+        //         System.out.println(line);
+        //         line = br.readLine(); 
+        //     }
+        // }catch(IOException ex){
+        //     System.out.println("An error occurred:" + ex.getMessage());
+        // }
 
         
        
@@ -349,4 +379,7 @@ public class App {
     //     thing.fly(); 
     // }
 
+
+    //SEMESTER 2 
+    // LAB 1 
 }
